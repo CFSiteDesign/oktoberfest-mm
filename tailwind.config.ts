@@ -14,9 +14,15 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        sans: ["Montserrat", "system-ui", "sans-serif"],
+        display: ["Anton", "Montserrat", "system-ui", "sans-serif"],
       },
       colors: {
+        brand: {
+          blue: "hsl(var(--brand-blue))",
+          gold: "hsl(var(--brand-gold))",
+          ink: "hsl(var(--brand-ink))",
+        },
         border: "hsl(var(--border))",
         divider: "hsl(var(--divider))",
         input: "hsl(var(--input))",
@@ -80,6 +86,23 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0) rotate(var(--tilt, 0deg))" },
+          "50%": { transform: "translateY(-18px) rotate(var(--tilt, 0deg))" },
+        },
+        "float-slow": {
+          "0%, 100%": { transform: "translateY(0) rotate(var(--tilt, 0deg))" },
+          "50%": { transform: "translateY(22px) rotate(var(--tilt, 0deg))" },
+        },
+        clink: {
+          "0%, 100%": { transform: "rotate(var(--tilt, 0deg))" },
+          "45%": { transform: "rotate(calc(var(--tilt, 0deg) - 7deg))" },
+          "55%": { transform: "rotate(calc(var(--tilt, 0deg) + 7deg))" },
+        },
         "float": {
           "0%, 100%": { transform: "translateY(0) rotate(var(--float-rotate, 3deg))" },
           "50%": { transform: "translateY(-20px) rotate(var(--float-rotate, 3deg))" },
@@ -97,6 +120,11 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        marquee: "marquee 26s linear infinite",
+        "marquee-slow": "marquee 44s linear infinite",
+        float: "float 6s ease-in-out infinite",
+        "float-slow": "float-slow 8s ease-in-out infinite",
+        clink: "clink 4s ease-in-out infinite",
         "float": "float 4s ease-in-out infinite",
         "float-reverse": "float-reverse 5s ease-in-out infinite",
         "falling-heart": "falling-heart linear infinite",
