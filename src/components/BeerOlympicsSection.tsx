@@ -19,7 +19,7 @@ const BeerOlympicsSection = () => {
           <h2 className="mt-6 font-display text-4xl leading-[0.9] text-white text-outline-sm sm:text-5xl md:text-6xl">
             Beer Olympics
           </h2>
-          <p className="text-lift mx-auto mt-5 max-w-xl text-sm font-bold leading-relaxed text-white md:text-base">
+          <p className="mx-auto mt-6 max-w-xl border-4 border-brand-ink bg-brand-ink px-5 py-4 text-sm font-semibold leading-relaxed text-white poster-shadow-gold md:text-base">
             Pick a team, pick a name, then defend it through six events of increasingly poor decision
             making. Prizes for the winners, stories for everyone else.
           </p>
@@ -54,9 +54,9 @@ const BeerOlympicsSection = () => {
           ))}
         </ol>
 
-        <p className="text-lift mt-8 flex items-center justify-center gap-1 text-center text-[10px] font-black uppercase tracking-[0.14em] text-white sm:tracking-[0.24em] md:text-xs">
+        <p className="mt-8 flex items-center justify-center gap-1 text-center text-[10px] font-black uppercase tracking-[0.14em] text-white sm:tracking-[0.24em] md:text-xs">
           <Dings className="h-6 w-6 shrink-0 text-brand-ink" />
-          Last one standing takes the big beer
+          <span className="bg-brand-ink px-3 py-1.5">Last one standing takes the big beer</span>
           <Dings flip className="h-6 w-6 shrink-0 text-brand-ink" />
         </p>
       </div>

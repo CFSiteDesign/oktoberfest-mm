@@ -71,7 +71,7 @@ const HeroSection = () => {
           <Dings flip className="hidden h-10 w-10 shrink-0 sm:block" />
         </div>
 
-        <p className="text-lift mt-7 max-w-xl text-sm font-bold leading-relaxed text-white sm:text-base md:text-lg">
+        <p className="mt-7 max-w-xl border-4 border-brand-ink bg-brand-ink px-5 py-4 text-sm font-semibold leading-relaxed text-white poster-shadow-gold sm:text-base md:text-lg">
           Three nights of free flow steins, a Beer Olympics nobody wins with dignity, and a pub crawl
           that refuses to end. Running across Mad Monkey hostels in Southeast Asia.
         </p>
@@ -109,7 +109,7 @@ const HeroSection = () => {
           ))}
         </div>
 
-        <p className="text-lift mt-9 text-[10px] font-black uppercase tracking-[0.24em] text-white sm:tracking-[0.3em] md:text-xs">
+        <p className="mt-9 bg-brand-ink px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.18em] text-white sm:tracking-[0.3em] md:text-xs">
           Open to guests and non guests · Lederhosen encouraged
         </p>
       </div>

@@ -48,7 +48,7 @@ const WeekendSection = () => {
               <article
                 key={day.id}
                 className={`lift flex flex-col border-4 border-brand-ink poster-shadow ${
-                  featured ? 'bg-brand-blue text-white' : 'bg-white text-brand-ink'
+                  featured ? 'bg-brand-ink text-white' : 'bg-white text-brand-ink'
                 }`}
               >
                 <div
@@ -105,8 +105,8 @@ const WeekendSection = () => {
                   </ul>
 
                   <p
-                    className={`mt-auto pt-7 text-[10px] font-black uppercase tracking-[0.22em] ${
-                      featured ? 'text-white/80' : 'text-brand-ink/55'
+                    className={`mt-auto pt-7 text-xs font-black uppercase tracking-[0.2em] ${
+                      featured ? 'text-brand-gold' : 'text-brand-ink/70'
                     }`}
                   >
                     {day.doors}
