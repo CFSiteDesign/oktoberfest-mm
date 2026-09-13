@@ -42,11 +42,12 @@ Saturday Beer Olympics free entry, Sunday Funday and pub quiz at $15). Other
 properties run the same three night shape with their own timings, which is what
 the page copy says.
 
-Hostel links in `src/data/properties.ts` point at each property's live
-`tours-events/list/<slug>` page on madmonkeyhostels.com. Properties without a
-public events page fall back to their destination page and show
-"Ask at reception". Once Oktoberfest event pages are published, swap the `url`
-values for the direct event URLs.
+## Hostel booking links
+
+Every hostel in `src/data/properties.ts` has an empty `url`, so all 23 cards show
+COMING SOON and are not clickable. Paste a Stripe checkout link into a
+property's `url` and that card becomes a live GET ACCESS button that opens it in
+a new tab. No other change is needed.
 
 ## Development
 

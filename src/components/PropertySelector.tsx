@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { COUNTRIES, PROPERTIES, STAY_URL, type CountryFilter } from '@/data/properties'
+import { COUNTRIES, PROPERTIES, type CountryFilter } from '@/data/properties'
 import { GingerHeart, Pretzel } from '@/components/BavarianArt'
 import Float from '@/components/FloatingDecor'
 import Kicker from '@/components/Kicker'
@@ -35,8 +35,8 @@ const PropertySelector = () => {
             <span className="text-brand-blue">drinking?</span>
           </h2>
           <p className="mt-5 text-sm font-semibold leading-relaxed text-brand-ink/75 md:text-base">
-            Choose your hostel for its Oktoberfest line up, prices and booking. If yours has not
-            published its events page yet, reception will sort you out on arrival.
+            Choose your hostel to book your Oktoberfest spot. Booking opens soon for every property,
+            so check back here.
           </p>
         </div>
 
@@ -63,17 +63,12 @@ const PropertySelector = () => {
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((property) => {
-            const href = property.url || STAY_URL(property.id)
-            const listed = Boolean(property.url)
-
-            return (
-              <a
-                key={property.id}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="lift group flex items-center justify-between gap-4 border-4 border-brand-ink bg-white px-5 py-5 poster-shadow-sm"
-              >
+            // A hostel goes live as soon as its Stripe link is added in src/data/properties.ts
+            const live = Boolean(property.url)
+            const card =
+              'flex items-center justify-between gap-4 border-4 border-brand-ink bg-white px-5 py-5 poster-shadow-sm'
+            const body = (
+              <>
                 <span>
                   <span className="block font-display text-xl leading-tight text-brand-ink sm:text-2xl">
                     {property.name}
@@ -84,12 +79,28 @@ const PropertySelector = () => {
                 </span>
                 <span
                   className={`shrink-0 border-4 border-brand-ink px-3 py-1.5 text-center text-[10px] font-black uppercase leading-tight tracking-[0.14em] ${
-                    listed ? 'bg-brand-gold text-brand-ink' : 'bg-brand-blue text-white'
+                    live ? 'bg-brand-gold text-brand-ink' : 'bg-brand-ink text-white'
                   }`}
                 >
-                  {listed ? 'See events' : 'Ask at reception'}
+                  {live ? 'Get access' : 'Coming soon'}
                 </span>
+              </>
+            )
+
+            return live ? (
+              <a
+                key={property.id}
+                href={property.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`lift ${card}`}
+              >
+                {body}
               </a>
+            ) : (
+              <div key={property.id} className={`${card} cursor-not-allowed`}>
+                {body}
+              </div>
             )
           })}
         </div>

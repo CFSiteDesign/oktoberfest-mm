@@ -99,7 +99,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: 'How do I book?',
-    a: 'Pick your hostel below and it will take you to that property’s tours and events page. Packages can also be booked at reception or at the bar on the night, subject to space.',
+    a: 'Pick your hostel below. Booking opens soon for every property, so check back here for your hostel’s link.',
   },
   {
     q: 'What does the package price cover?',
@@ -115,6 +115,6 @@ export const FAQS: Faq[] = [
   },
   {
     q: 'Is every Mad Monkey running it?',
-    a: 'Most of the network runs the weekend, with timings and pricing set by each property. Check your hostel below for its exact line up, and if it is not listed yet ask at reception.',
+    a: 'Most of the network runs the weekend, with timings and pricing set by each property. Booking for each hostel goes live below soon.',
   },
 ]

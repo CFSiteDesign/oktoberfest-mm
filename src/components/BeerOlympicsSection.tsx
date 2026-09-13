@@ -44,12 +44,6 @@ const BeerOlympicsSection = () => {
                   {event.note}
                 </span>
               </span>
-              <span
-                aria-hidden="true"
-                className="hidden shrink-0 font-display text-2xl text-brand-blue/35 sm:block"
-              >
-                {String(i + 1).padStart(2, '0')}
-              </span>
             </li>
           ))}
         </ol>
