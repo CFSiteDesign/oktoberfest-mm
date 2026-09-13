@@ -7,6 +7,7 @@ import {
 import { FAQS } from '@/data/schedule'
 import { Bratwurst } from '@/components/BavarianArt'
 import Float from '@/components/FloatingDecor'
+import Kicker from '@/components/Kicker'
 
 const FaqSection = () => {
   return (
@@ -17,9 +18,7 @@ const FaqSection = () => {
 
       <div className="relative z-10 mx-auto max-w-3xl px-5">
         <div className="text-center">
-          <span className="inline-block border-4 border-brand-ink bg-white px-4 py-1.5 font-display text-xs tracking-[0.24em] text-brand-ink poster-shadow-sm">
-            Before you commit
-          </span>
+          <Kicker>Before you commit</Kicker>
           <h2 className="mt-6 font-display text-4xl leading-[0.9] text-brand-ink sm:text-5xl md:text-6xl">
             Questions,
             <br />

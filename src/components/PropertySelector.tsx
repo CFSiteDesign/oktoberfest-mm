@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { COUNTRIES, PROPERTIES, STAY_URL, type CountryFilter } from '@/data/properties'
 import { GingerHeart, Pretzel } from '@/components/BavarianArt'
 import Float from '@/components/FloatingDecor'
+import Kicker from '@/components/Kicker'
 
 const PropertySelector = () => {
   const [filter, setFilter] = useState<CountryFilter>('All')
@@ -27,9 +28,7 @@ const PropertySelector = () => {
 
       <div className="relative z-10 mx-auto max-w-6xl px-5">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="inline-block border-4 border-brand-ink bg-brand-blue px-4 py-1.5 font-display text-xs tracking-[0.24em] text-white poster-shadow-sm">
-            Pick your Monkey
-          </span>
+          <Kicker>Pick your Monkey</Kicker>
           <h2 className="mt-6 font-display text-4xl leading-[0.9] text-brand-ink sm:text-5xl md:text-6xl">
             Where are you
             <br />

@@ -1,6 +1,9 @@
-import { Pretzel, Stein, Hops, Barrel, RautenRule, Sparkle } from '@/components/BavarianArt'
+import { Pretzel, Stein, Hops, Barrel, Dings } from '@/components/BavarianArt'
 import Float from '@/components/FloatingDecor'
 import { BOOK_URL } from '@/data/properties'
+import title760 from '@/assets/oktoberfest-title-760.webp'
+import title1400 from '@/assets/oktoberfest-title-1400.webp'
+import madMonkeyLogo from '@/assets/mad-monkey-logo-white.webp'
 
 /** Marks that drift along the bottom of the hero on anything narrower than xl */
 const BAND = [
@@ -13,12 +16,10 @@ const BAND = [
 
 const HeroSection = () => {
   return (
-    <header className="relative overflow-hidden bg-brand-blue">
-      <RautenRule className="border-t-0" />
-
+    <header className="halftone relative overflow-hidden border-b-4 border-brand-ink">
       {/* Wide screens have room in the margins for full size steins */}
       <Float className="left-8 top-28 hidden w-52 xl:block" tilt={-14} variant="clink">
-        <Stein className="w-full drop-shadow-[6px_6px_0_rgba(4,34,61,0.25)]" />
+        <Stein className="w-full drop-shadow-[6px_6px_0_rgba(4,34,61,0.3)]" />
       </Float>
       <Float
         className="right-8 top-40 hidden w-52 xl:block"
@@ -26,7 +27,7 @@ const HeroSection = () => {
         variant="clink"
         delay="0.8s"
       >
-        <Stein className="w-full -scale-x-100 drop-shadow-[6px_6px_0_rgba(4,34,61,0.25)]" />
+        <Stein className="w-full -scale-x-100 drop-shadow-[6px_6px_0_rgba(4,34,61,0.3)]" />
       </Float>
       <Float className="bottom-16 left-12 hidden w-32 xl:block" tilt={-8} variant="float-slow" delay="1.2s">
         <Pretzel className="w-full" />
@@ -35,30 +36,42 @@ const HeroSection = () => {
         <Hops className="w-full" />
       </Float>
 
-      <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center px-5 py-14 text-center md:py-20 xl:py-24">
-        <p className="inline-flex items-center gap-2 border-4 border-brand-ink bg-brand-gold px-4 py-2 text-[10px] font-black uppercase tracking-[0.2em] text-brand-ink poster-shadow-sm sm:tracking-[0.28em] md:text-xs">
-          <Sparkle className="h-3 w-3" />
-          Mad Monkey Hostels presents
-          <Sparkle className="h-3 w-3" />
-        </p>
+      <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center px-5 pb-14 pt-8 text-center md:pb-20 md:pt-10">
+        <img
+          src={madMonkeyLogo}
+          alt="Mad Monkey Hostels"
+          width={640}
+          height={186}
+          className="h-9 w-auto md:h-11"
+        />
 
-        <h1 className="mt-8 font-display leading-[0.82] text-white">
-          <span className="block text-[20vw] text-outline drop-shadow-[10px_10px_0_hsl(var(--brand-gold))] sm:text-[16vw] md:text-[8.5rem] xl:text-[10.5rem]">
-            OKTOBER
-          </span>
-          <span className="mt-2 block text-[20vw] text-brand-gold text-outline drop-shadow-[10px_10px_0_rgba(4,34,61,0.35)] sm:text-[16vw] md:text-[8.5rem] xl:text-[10.5rem]">
-            FEST
-          </span>
+        {/* Charlie's master lockup is the title, so it is the h1 */}
+        <h1 className="mt-3 w-full max-w-[680px]">
+          <img
+            src={title1400}
+            srcSet={`${title760} 760w, ${title1400} 1400w`}
+            sizes="(min-width: 768px) 680px, 92vw"
+            width={1400}
+            height={1075}
+            alt="ALL IN Oktoberfest 2026"
+            draggable={false}
+            className="h-auto w-full select-none"
+            {...{ fetchpriority: 'high' }}
+          />
         </h1>
 
-        <div className="mt-8 w-full max-w-2xl border-4 border-brand-ink bg-white px-4 py-3 poster-shadow">
-          <p className="font-display text-lg tracking-[0.08em] text-brand-ink sm:text-2xl sm:tracking-[0.12em] md:text-3xl">
-            Fri 2 <span className="text-brand-blue">·</span> Sat 3{' '}
-            <span className="text-brand-blue">·</span> Sun 4 October 2026
-          </p>
+        <div className="mt-1 flex w-full max-w-2xl items-center justify-center gap-2 text-brand-ink">
+          <Dings className="hidden h-10 w-10 shrink-0 sm:block" />
+          <div className="w-full border-4 border-brand-ink bg-white px-4 py-3 poster-shadow">
+            <p className="font-display text-lg tracking-[0.08em] text-brand-ink sm:text-2xl sm:tracking-[0.12em] md:text-3xl">
+              Fri 2 <span className="text-brand-blue">·</span> Sat 3{' '}
+              <span className="text-brand-blue">·</span> Sun 4 October 2026
+            </p>
+          </div>
+          <Dings flip className="hidden h-10 w-10 shrink-0 sm:block" />
         </div>
 
-        <p className="mt-7 max-w-xl text-sm font-semibold leading-relaxed text-white/95 sm:text-base md:text-lg">
+        <p className="text-lift mt-7 max-w-xl text-sm font-bold leading-relaxed text-white sm:text-base md:text-lg">
           Three nights of free flow steins, a Beer Olympics nobody wins with dignity, and a pub crawl
           that refuses to end. Running across Mad Monkey hostels in Southeast Asia.
         </p>
@@ -96,12 +109,10 @@ const HeroSection = () => {
           ))}
         </div>
 
-        <p className="mt-9 text-[10px] font-black uppercase tracking-[0.24em] text-white/80 sm:tracking-[0.3em] md:text-xs">
+        <p className="text-lift mt-9 text-[10px] font-black uppercase tracking-[0.24em] text-white sm:tracking-[0.3em] md:text-xs">
           Open to guests and non guests · Lederhosen encouraged
         </p>
       </div>
-
-      <RautenRule className="border-b-0" />
     </header>
   )
 }

@@ -1,23 +1,38 @@
-# Mad Monkey Oktoberfest 2026
+# ALL IN Oktoberfest 2026 · Mad Monkey
 
-Event landing page for Mad Monkey Oktoberfest, **Friday 2 to Sunday 4 October 2026**.
+Event landing page for ALL IN Oktoberfest at Mad Monkey hostels, **Friday 2 to Sunday 4 October 2026**.
 
-Live sections: hero, three night programme, Beer Olympics running order, hostel
-picker, FAQ and footer.
+Sections: hero, three night programme, Beer Olympics running order, hostel picker,
+FAQ and footer.
 
 ## Palette
 
 | Role | Hex |
 |---|---|
-| Bavarian blue | `#0081f7` |
-| Festival gold | `#ffc100` |
+| Blue | `#0081f7` |
+| Gold | `#ffc100` |
 | White | `#ffffff` |
 | Outline ink | `#04223d` (a deep shade of the brand blue, used for poster borders and type outlines) |
 
-Type is Anton for display and Montserrat for everything else. The Bavarian
-lozenge (Rauten) bands are a tiled inline SVG, and every illustration in
-`src/components/BavarianArt.tsx` is hand built SVG, so the page ships with no
-image requests beyond the share card.
+Type is Anton for display and Montserrat for everything else, including the
+italic 900 sticker labels.
+
+## Artwork
+
+Everything visual follows the two brand files supplied for the event:
+
+| File in `src/assets` | Source | Notes |
+|---|---|---|
+| `oktoberfest-title-1400.webp`, `-760.webp` | `MMGBL - Oktoberfest 2026 Main Logo.png` | The hero title. Trimmed to its alpha bounds and a stray blue speck below the lettering removed. The soft gold glow is kept in the alpha channel, so it sits on any background. |
+| `oktoberfest-wristband.webp` | `MMGBL Oktoberfest - Wristband.png` | Used unchanged as the footer band. |
+| `mad-monkey-logo-white.webp` | Mad Monkey face logo | Recoloured to match the wristband: white face fill, black linework, white wordmark. |
+| `all-in-logo.webp` | ALL IN logo from `mm-squad-trips` | Footer lockup. |
+
+The halftone ground (`.halftone` in `src/index.css`) is a recreation of the
+wristband texture: a single 20px SVG tile with the dot lattice rotated 18.4
+degrees, the one angle that repeats seamlessly in a square. The illustrations in
+`src/components/BavarianArt.tsx` (steins, pretzel, hops, keg) are hand built
+inline SVG.
 
 ## Where the programme came from
 
@@ -43,14 +58,14 @@ npm run dev
 Runs on port 5185 via the `oktoberfest-mm` launch config.
 
 ```sh
-npm run build      # production build
+npm run build                           # production build
 npx tsc -p tsconfig.app.json --noEmit   # typecheck (plain tsc is a no-op here)
 ```
 
 ## Share card
 
-`public/og-oktoberfest.png` is a 1200x630 poster referenced by the Open Graph and
-Twitter tags in `index.html`.
+`public/og-oktoberfest.jpg` is a 1200x630 card built from the title artwork on
+the halftone, referenced by the Open Graph and Twitter tags in `index.html`.
 
 ## Deploying
 

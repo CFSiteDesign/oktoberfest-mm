@@ -166,38 +166,19 @@ export const GingerHeart = ({ className, title = 'Gingerbread heart' }: ArtProps
   </svg>
 )
 
-export const Sparkle = ({ className, title = 'Sparkle' }: ArtProps) => (
-  <svg viewBox="0 0 120 120" className={base(className)} role="img" aria-label={title}>
-    <path
-      d="M60 8l12 38 40 14-40 14-12 38-12-38-40-14 40-14Z"
-      fill={GOLD}
-      stroke={INK}
-      strokeWidth="6"
-      strokeLinejoin="round"
-    />
-  </svg>
-)
-
-/** Bavarian lozenge band, used as a section rule */
-export const RautenRule = ({ className }: { className?: string }) => (
-  <div
-    className={`rauten h-11 w-full border-y-4 border-brand-ink bg-center ${className ?? ''}`}
+/** Graffiti "ding" marks, as drawn around the ALL IN tag and 2026 on the logo.
+ *  Strokes radiate toward the right; pass flip to point them left. */
+export const Dings = ({ className, flip = false }: { className?: string; flip?: boolean }) => (
+  <svg
+    viewBox="0 0 48 48"
+    className={`select-none ${flip ? '-scale-x-100' : ''} ${className ?? ''}`}
     aria-hidden="true"
-  />
-)
-
-export const MadMonkeyWordmark = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 420 60" className={className} role="img" aria-label="Mad Monkey Hostels">
-    <text
-      x="210"
-      y="44"
-      textAnchor="middle"
-      fontFamily="Anton, Montserrat, sans-serif"
-      fontSize="46"
-      letterSpacing="2"
-      fill="currentColor"
-    >
-      MAD MONKEY
-    </text>
+  >
+    <g fill="none" stroke="currentColor" strokeWidth="4.5" strokeLinecap="round">
+      <path d="M8 24h14" />
+      <path d="M12 10l12 7" />
+      <path d="M12 38l12-7" />
+      <path d="M24 4l5 8" />
+    </g>
   </svg>
 )

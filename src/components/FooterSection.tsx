@@ -1,5 +1,8 @@
-import { MadMonkeyWordmark, RautenRule, Stein } from '@/components/BavarianArt'
+import { Stein } from '@/components/BavarianArt'
 import { ALL_EVENTS_URL, BOOK_URL } from '@/data/properties'
+import wristband from '@/assets/oktoberfest-wristband.webp'
+import allInLogo from '@/assets/all-in-logo.webp'
+import madMonkeyLogo from '@/assets/mad-monkey-logo-white.webp'
 
 const SOCIALS = [
   { name: 'Instagram', url: 'https://www.instagram.com/madmonkeyhostels/' },
@@ -12,7 +15,18 @@ const SOCIALS = [
 const FooterSection = () => {
   return (
     <footer className="bg-brand-ink text-white">
-      <RautenRule className="border-t-0" />
+      {/* the event wristband artwork, used as-is as the footer band */}
+      <div className="border-b-4 border-brand-ink bg-brand-blue">
+        <img
+          src={wristband}
+          alt=""
+          aria-hidden="true"
+          width={2148}
+          height={123}
+          loading="lazy"
+          className="block h-12 w-full object-cover object-left sm:h-16 lg:h-auto"
+        />
+      </div>
 
       {/* final call to action */}
       <div className="mx-auto flex max-w-4xl flex-col items-center px-5 py-16 text-center md:py-20">
@@ -43,8 +57,26 @@ const FooterSection = () => {
       </div>
 
       <div className="border-t-4 border-white/20">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-7 px-5 py-12">
-          <MadMonkeyWordmark className="w-56 text-white md:w-72" />
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-5 py-12">
+          <div className="flex items-center gap-6 md:gap-10">
+            <img
+              src={allInLogo}
+              alt="ALL IN"
+              width={520}
+              height={357}
+              loading="lazy"
+              className="h-14 w-auto -rotate-6 md:h-20"
+            />
+            <span aria-hidden="true" className="h-12 w-1 bg-white/25 md:h-16" />
+            <img
+              src={madMonkeyLogo}
+              alt="Mad Monkey Hostels"
+              width={640}
+              height={186}
+              loading="lazy"
+              className="h-10 w-auto md:h-14"
+            />
+          </div>
 
           <nav className="flex flex-wrap justify-center gap-3">
             {[...SOCIALS, { name: 'All events', url: ALL_EVENTS_URL }].map((link) => (
@@ -61,7 +93,7 @@ const FooterSection = () => {
           </nav>
 
           <p className="text-center text-[9px] font-black uppercase tracking-[0.3em] text-white/45 md:text-[10px]">
-            © 2026 Mad Monkey Hostels · Oktoberfest · 2 to 4 October 2026
+            © 2026 Mad Monkey Hostels · ALL IN Oktoberfest · 2 to 4 October 2026
           </p>
         </div>
       </div>
