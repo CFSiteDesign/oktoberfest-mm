@@ -2,8 +2,8 @@
 
 Event landing page for ALL IN Oktoberfest at Mad Monkey hostels, **Friday 2 to Sunday 4 October 2026**.
 
-Sections: hero, three night programme, Beer Olympics running order, hostel picker,
-FAQ and footer.
+Sections, in page order: hero, hostel picker, FAQ, the Siem Reap three night
+programme, Beer Olympics running order and footer.
 
 ## Palette
 
@@ -39,15 +39,22 @@ inline SVG.
 The three night line up in `src/data/schedule.ts` is the confirmed Mad Monkey
 Siem Reap Oktoberfest programme (Friday BBQ and free flow plus pub crawl at $20,
 Saturday Beer Olympics free entry, Sunday Funday and pub quiz at $15). Other
-properties run the same three night shape with their own timings, which is what
-the page copy says.
+hostels run their own programmes, so the page labels this section as Siem Reap
+and places it at the end, after the hostel list and FAQ.
 
 ## Hostel booking links
 
-Every hostel in `src/data/properties.ts` has an empty `url`, so all 23 cards show
-COMING SOON and are not clickable. Paste a Stripe checkout link into a
-property's `url` and that card becomes a live GET ACCESS button that opens it in
-a new tab. No other change is needed.
+21 of the 23 hostels in `src/data/properties.ts` link to their Oktoberfest event
+page on madmonkeyhostels.com (`tours-events/oktoberfest-mad-monkey-<slug>`) and show
+a GET ACCESS button that opens it in a new tab. Siem Reap's page has its own slug,
+`oktoberfest-friday-bbq-free-flow-package-pub-crawl`. Kampot and Nacpan Beach
+have no page yet, so their `url` is empty and they show COMING SOON. Paste a link
+into a property's `url` to make it live. No other change is needed.
+
+## Page order
+
+Hero, ticker, hostel list, FAQ, then the Siem Reap line up and Beer Olympics,
+then the footer. Hostels come first so people can go straight to booking.
 
 ## Development
 

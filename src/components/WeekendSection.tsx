@@ -28,7 +28,7 @@ const WeekendSection = () => {
 
       <div className="relative z-10 mx-auto max-w-6xl px-5">
         <div className="mx-auto max-w-2xl text-center">
-          <Kicker>The weekend</Kicker>
+          <Kicker>Siem Reap line up</Kicker>
           <h2 className="mt-6 font-display text-4xl leading-[0.9] text-brand-ink sm:text-5xl md:text-6xl">
             Three nights.
             <br />
@@ -36,8 +36,8 @@ const WeekendSection = () => {
           </h2>
           <p className="mt-5 text-sm font-semibold leading-relaxed text-brand-ink/75 md:text-base">
             Every night has its own format, its own price and its own way of ending badly. Below is the
-            line up as it runs at Mad Monkey Siem Reap. Other hostels run the same three night shape
-            with their own timings.
+            line up as it runs at Mad Monkey Siem Reap. Every hostel runs its own programme, so check
+            your hostel’s Oktoberfest page for its line up.
           </p>
         </div>
 

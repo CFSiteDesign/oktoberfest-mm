@@ -35,8 +35,8 @@ const PropertySelector = () => {
             <span className="text-brand-blue">drinking?</span>
           </h2>
           <p className="mt-5 text-sm font-semibold leading-relaxed text-brand-ink/75 md:text-base">
-            Choose your hostel to book your Oktoberfest spot. Booking opens soon for every property,
-            so check back here.
+            Choose your hostel and hit Get access to book your spot on its Oktoberfest page. Each
+            hostel runs its own programme, with its own timings and prices.
           </p>
         </div>
 
@@ -63,7 +63,7 @@ const PropertySelector = () => {
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((property) => {
-            // A hostel goes live as soon as its Stripe link is added in src/data/properties.ts
+            // A hostel goes live as soon as its event page link is added in src/data/properties.ts
             const live = Boolean(property.url)
             const card =
               'flex items-center justify-between gap-4 border-4 border-brand-ink bg-white px-5 py-5 poster-shadow-sm'

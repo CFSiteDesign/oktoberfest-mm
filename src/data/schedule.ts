@@ -99,15 +99,15 @@ export const FAQS: Faq[] = [
   },
   {
     q: 'How do I book?',
-    a: 'Pick your hostel below. Booking opens soon for every property, so check back here for your hostel’s link.',
+    a: 'Pick your hostel above and hit Get access. That takes you to its Oktoberfest page, where you can book. Kampot and Nacpan Beach are coming soon.',
   },
   {
     q: 'What does the package price cover?',
-    a: 'Friday is $20 for the BBQ, the free flow beer window and the pub crawl. Sunday is $15 for the BBQ plate, unlimited drinks window and pub quiz entry. Saturday Beer Olympics is free to enter.',
+    a: 'Each hostel sets its own packages and prices, listed on its Oktoberfest page. At Siem Reap, Friday is $20 for the BBQ, the free flow beer window and the pub crawl, Saturday Beer Olympics is free to enter, and Sunday is $15 for the BBQ plate, unlimited drinks window and pub quiz entry.',
   },
   {
     q: 'Is free flow really free flow?',
-    a: 'Yes, inside the stated window. Friday runs 7:00 to 8:30 PM, Sunday runs for ninety minutes from the start of service. After that it is back to normal bar prices, which at Mad Monkey are hardly punishing.',
+    a: 'Yes, inside the stated window, which each hostel lists on its Oktoberfest page. At Siem Reap, Friday runs 7:00 to 8:30 PM and Sunday runs for ninety minutes from the start of service. After that it is back to normal bar prices, which at Mad Monkey are hardly punishing.',
   },
   {
     q: 'Do I need a costume?',
@@ -115,6 +115,6 @@ export const FAQS: Faq[] = [
   },
   {
     q: 'Is every Mad Monkey running it?',
-    a: 'Most of the network runs the weekend, with timings and pricing set by each property. Booking for each hostel goes live below soon.',
+    a: '21 hostels are bookable now, each with its own timings and pricing, all in the list above. Kampot and Nacpan Beach are coming soon.',
   },
 ]

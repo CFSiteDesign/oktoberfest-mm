@@ -15,7 +15,10 @@ const BeerOlympicsSection = () => {
 
       <div className="relative z-10 mx-auto max-w-3xl px-5">
         <div className="text-center">
-          <Kicker>Sat 3 October · Free entry</Kicker>
+          {/* "entry" drops below 400px so the sticker and its dings fit a 360px phone */}
+          <Kicker>
+            Siem Reap · Sat 3 Oct · Free<span className="hidden min-[400px]:inline"> entry</span>
+          </Kicker>
           <h2 className="mt-6 font-display text-4xl leading-[0.9] text-white text-outline-sm sm:text-5xl md:text-6xl">
             Beer Olympics
           </h2>

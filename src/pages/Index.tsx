@@ -6,11 +6,15 @@ import PropertySelector from '@/components/PropertySelector'
 import FaqSection from '@/components/FaqSection'
 import FooterSection from '@/components/FooterSection'
 
+// Hostels come straight after the hero so people can find where to go first.
+// The Siem Reap line up and Beer Olympics are one property's programme, so they close the page.
 const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       <HeroSection />
       <TickerBar />
+      <PropertySelector />
+      <FaqSection />
       <WeekendSection />
       <TickerBar
         tone="blue"
@@ -27,8 +31,6 @@ const Index = () => {
         ]}
       />
       <BeerOlympicsSection />
-      <PropertySelector />
-      <FaqSection />
       <FooterSection />
     </div>
   )
